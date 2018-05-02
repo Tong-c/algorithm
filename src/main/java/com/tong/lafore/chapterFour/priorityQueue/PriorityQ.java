@@ -1,4 +1,4 @@
-package com.tong.chapterFour.priorityQueue;
+package com.tong.lafore.chapterFour.priorityQueue;
 
 public class PriorityQ {
 

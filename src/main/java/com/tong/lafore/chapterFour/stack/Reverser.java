@@ -1,6 +1,4 @@
-package com.tong.chapterFour.stack;
-
-import com.tong.chapterFour.stack.CharStackX;
+package com.tong.lafore.chapterFour.stack;
 
 public class Reverser {
     private String input;

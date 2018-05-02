@@ -1,4 +1,4 @@
-package com.tong.chapterFour.queue;
+package com.tong.lafore.chapterFour.queue;
 
 public class NoNitemsQueue {
 

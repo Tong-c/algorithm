@@ -1,4 +1,4 @@
-package com.tong.chapterFour.stack;
+package com.tong.lafore.chapterFour.stack;
 
 public class StackApp {
     public static void main(String[] args) {

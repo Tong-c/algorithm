@@ -1,7 +1,5 @@
-package com.tong.chapterFour.stack;
+package com.tong.lafore.chapterFour.stack;
 
-
-import com.tong.chapterFour.stack.BracketChecker;
 
 import java.io.BufferedReader;
 import java.io.IOException;

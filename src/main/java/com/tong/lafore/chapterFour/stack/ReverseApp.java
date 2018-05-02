@@ -1,4 +1,4 @@
-package com.tong.chapterFour.stack;
+package com.tong.lafore.chapterFour.stack;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.tong.chapterThree;
+package com.tong.lafore.chapterThree;
 
 public class ArrayBub {
 
