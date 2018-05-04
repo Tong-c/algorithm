@@ -1,4 +1,4 @@
-package com.tong.lafore.chapterFive;
+package com.tong.lafore.chapterFive.linkList;
 
 public class LinkListApp {
 

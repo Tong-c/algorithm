@@ -1,4 +1,4 @@
-package com.tong.lafore.chapterFive;
+package com.tong.lafore.chapterFive.firstLastLinkList;
 
 public class FirstLastLink {
 

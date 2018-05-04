@@ -1,4 +1,6 @@
-package com.tong.lafore.chapterFive;
+package com.tong.lafore.chapterFive.firstLastLinkList;
+
+import com.tong.lafore.chapterFive.firstLastLinkList.FirstLastLink;
 
 /**
  * 雙端鏈表
