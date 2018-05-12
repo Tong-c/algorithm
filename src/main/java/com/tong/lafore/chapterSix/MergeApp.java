@@ -1,7 +1,5 @@
 package com.tong.lafore.chapterSix;
 
-import static com.sun.glass.ui.gtk.GtkApplication.display;
-import static com.sun.glass.ui.gtk.GtkApplication.display;
 
 //歸并排序
 public class MergeApp {
