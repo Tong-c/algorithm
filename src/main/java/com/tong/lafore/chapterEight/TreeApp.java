@@ -9,6 +9,7 @@ public class TreeApp {
 
     public static void main(String[] args) throws IOException {
         int value;
+
         Tree theTree = new Tree();
 
         theTree.insert(50,1.5);
