@@ -1,5 +1,6 @@
 package com.tong.lafore.chapterEleven;
 
+
 public class DataItem {
 
     private int iData;

@@ -1,26 +1,27 @@
-package com.tong.lafore.chapterEleven;
+package com.tong.lafore.chapterEleven.hashTableInChain;
+
+import com.tong.lafore.chapterEleven.DataItem;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class HashTableApp {
+public class HashChainApp {
 
     public static void main(String[] args) throws IOException {
-        DataItem aDataItem;
-        int aKey,size,n,keysPerCell;
+        int aKey;
+        Link aDataItem;
+        int size,n,keysPerCell = 100;
 
-        System.out.print("Enter size of hash table:");
+        System.out.print("Enter size of hash table: ");
         size = getInt();
-        System.out.print("Enter initial number of itmes:");
+        System.out.print("Enter initial number of items: ");
         n = getInt();
-        keysPerCell = 10;
 
         HashTable theHashTable = new HashTable(size);
-
         for(int j = 0;j < n;j++){
             aKey = (int) (Math.random() * keysPerCell * size);
-            aDataItem = new DataItem(aKey);
+            aDataItem = new Link(aKey);
             theHashTable.insert(aDataItem);
         }
 
@@ -36,7 +37,7 @@ public class HashTableApp {
                 case 'i':
                     System.out.print("Enter key value to insert:");
                     aKey = getInt();
-                    aDataItem = new DataItem(aKey);
+                    aDataItem = new Link(aKey);
                     theHashTable.insert(aDataItem);
                     break;
                 case 'd':
@@ -59,6 +60,9 @@ public class HashTableApp {
 
             }
         }
+
+
+
 
 
     }

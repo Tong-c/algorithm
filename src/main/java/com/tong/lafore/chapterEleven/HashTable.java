@@ -1,5 +1,7 @@
 package com.tong.lafore.chapterEleven;
 
+import com.tong.lafore.chapterEleven.DataItem;
+
 public class HashTable {
 
     private DataItem[] hashArray;
