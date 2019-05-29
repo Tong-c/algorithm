@@ -20,6 +20,7 @@ public class ResizingArrayStack<T> implements Iterable<T> {
 
     /**
      * 调整数组大小，新建临时数组，复制数据
+     *
      * @param max
      */
     public void resize(int max) {
@@ -30,9 +31,54 @@ public class ResizingArrayStack<T> implements Iterable<T> {
         a = temp;
     }
 
+    /**
+     * 将元素添加到栈顶
+     *
+     * @param t
+     */
+    public void push(T t) {
+        if (N == a.length) {
+            resize(2 * a.length);
+        }
+        a[N++] = t;
+    }
+
+    /**
+     * 从栈顶删除元素
+     *
+     * @return
+     */
+    public T pop() {
+        T t = a[--N];
+        a[N] = null; //避免对象游离
+        if (N > 0 && N == a.length / 4) {
+            resize(a.length / 2);
+        }
+        return t;
+    }
 
     @Override
     public Iterator<T> iterator() {
-        return null;
+        return new ReverseArrayIterator();
+    }
+
+    private class ReverseArrayIterator implements Iterator<T> {
+
+        private int i = N;
+
+        @Override
+        public boolean hasNext() {
+            return i > 0;
+        }
+
+        @Override
+        public T next() {
+            return a[--i];
+        }
+
+        @Override
+        public void remove() {
+
+        }
     }
 }
