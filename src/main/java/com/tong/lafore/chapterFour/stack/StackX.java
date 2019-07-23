@@ -12,23 +12,23 @@ public class StackX {
         top = -1;
     }
 
-    public void push(long j){
+    public void push(long j) {
         stackArray[++top] = j;
     }
 
-    public long pop(){
+    public long pop() {
         return stackArray[top--];
     }
 
-    public long peek(){
+    public long peek() {
         return stackArray[top];
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return (top == -1);
     }
 
-    public boolean isFull(){
+    public boolean isFull() {
         return (top == maxSize - 1);
     }
 

@@ -11,7 +11,7 @@ public class Link {
         this.dData = dd;
     }
 
-    public void displayLink(){
+    public void displayLink() {
         System.out.println("{" + iData + "," + dData + "}");
     }
 }

@@ -6,57 +6,57 @@ public class LinkListForStackAndQueue {
 
     private LinkForStackAndQueue first;
 
-    public void LinkList(){
+    public void LinkList() {
         first = null;
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return (first == null);
     }
 
-    public void insertFirst(long dd){
+    public void insertFirst(long dd) {
         LinkForStackAndQueue newLink = new LinkForStackAndQueue(dd);
         newLink.next = first;
         first = newLink;
     }
 
 
-    public long deleteFirst(){
+    public long deleteFirst() {
         LinkForStackAndQueue temp = first;
         first = first.next;
         return temp.dData;
     }
 
 
-    public LinkForStackAndQueue find(int key){
+    public LinkForStackAndQueue find(int key) {
         LinkForStackAndQueue current = first;
-        while(current.dData != key){
-            if(current.next == null){
+        while (current.dData != key) {
+            if (current.next == null) {
                 return null;
-            }else {
+            } else {
                 current = current.next;
             }
         }
         return current;
     }
 
-    public LinkForStackAndQueue delete(int key){
+    public LinkForStackAndQueue delete(int key) {
 
         LinkForStackAndQueue current = first;
         LinkForStackAndQueue previous = first;
 
-        while(current.dData != key){
-            if(current.next == null){
+        while (current.dData != key) {
+            if (current.next == null) {
                 return null;
-            }else {
+            } else {
                 previous = current;
                 current = current.next;
             }
         }
 
-        if(current == first){
+        if (current == first) {
             first = first.next;
-        }else {
+        } else {
             previous.next = current.next;
         }
 
@@ -64,10 +64,10 @@ public class LinkListForStackAndQueue {
     }
 
 
-    public void displayList(){
+    public void displayList() {
         System.out.println("List (first-->last):");
         LinkForStackAndQueue current = first;
-        while(current != null){
+        while (current != null) {
             current.displayLink();
             current = current.next;
 

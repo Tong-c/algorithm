@@ -16,7 +16,7 @@ public class AnagramApp {
         String input = getString();
         size = input.length();
         count = 0;
-        for(int j = 0;j<size;j++){
+        for (int j = 0; j < size; j++) {
             arrChar[j] = input.charAt(j);
         }
         doAnagram(size);
@@ -29,48 +29,47 @@ public class AnagramApp {
         return s;
     }
 
-    public static void doAnagram(int newsize){
-        if(newsize == 1 ){
+    public static void doAnagram(int newsize) {
+        if (newsize == 1) {
             return;
         }
-        for(int j = 0;j<newsize;j++){
+        for (int j = 0; j < newsize; j++) {
             doAnagram(newsize - 1);
-            if(newsize == 2){
+            if (newsize == 2) {
                 displayWord();
             }
             rotate(newsize);
         }
     }
 
-    public static void rotate(int newsize){
+    public static void rotate(int newsize) {
         int j;
         int position = size - newsize;
         char temp = arrChar[position];
-        for(j = position + 1;j < size;j++){
-            arrChar[j-1] = arrChar[j];
+        for (j = position + 1; j < size; j++) {
+            arrChar[j - 1] = arrChar[j];
         }
-        arrChar[j-1] = temp;
+        arrChar[j - 1] = temp;
     }
 
 
-
-    public static void displayWord(){
-        if(count < 99){
+    public static void displayWord() {
+        if (count < 99) {
             System.out.print(" ");
         }
-        if(count < 9){
+        if (count < 9) {
             System.out.print(" ");
         }
 
         System.out.print(++count + " ");
-        for(int j = 0;j < size;j++){
+        for (int j = 0; j < size; j++) {
             System.out.print(arrChar[j]);
         }
 
         System.out.print("  ");
         System.out.print(" ");
         System.out.flush();
-        if(count % 6 == 0){
+        if (count % 6 == 0) {
             System.out.println("");
         }
     }

@@ -7,8 +7,8 @@ public class ShellSortApp {
         ArraySh arr;
         arr = new ArraySh(maxSize);
 
-        for(int j = 0;j < maxSize;j++){
-            long n = (int) (Math.random()*99);
+        for (int j = 0; j < maxSize; j++) {
+            long n = (int) (Math.random() * 99);
             arr.insert(n);
         }
 

@@ -7,12 +7,12 @@ import java.io.InputStreamReader;
 
 public class BracketsApp {
     public static void main(String[] args) {
-        String input ;
-        while (true){
+        String input;
+        while (true) {
             System.out.println("Enter string containing delimeters:");
             System.out.flush();
             input = getString();
-            if (input.equals("")){
+            if (input.equals("")) {
                 break;
             }
 
@@ -22,7 +22,7 @@ public class BracketsApp {
         }
     }
 
-    public static String getString(){
+    public static String getString() {
         InputStreamReader isr = new InputStreamReader(System.in);
         BufferedReader br = new BufferedReader(isr);
         String s = null;

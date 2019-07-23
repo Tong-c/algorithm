@@ -6,21 +6,21 @@ public class StackX {
     private Params[] stackArray;
     private int top;
 
-    public StackX(int s){
+    public StackX(int s) {
         maxSize = s;
         stackArray = new Params[maxSize];
         top = -1;
     }
 
-    public void push(Params p){
+    public void push(Params p) {
         stackArray[++top] = p;
     }
 
-    public Params pop(){
+    public Params pop() {
         return stackArray[top--];
     }
 
-    public Params peek(){
+    public Params peek() {
         return stackArray[top];
     }
 

@@ -7,7 +7,7 @@ public class QuickSortApp {
         ArrayIns arr;
         arr = new ArrayIns(maxSize);
 
-        for(int j = 0;j<maxSize;j++){
+        for (int j = 0; j < maxSize; j++) {
             long n = (long) (Math.random() * 199);
             arr.insert(n);
         }

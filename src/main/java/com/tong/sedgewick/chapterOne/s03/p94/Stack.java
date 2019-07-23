@@ -11,6 +11,7 @@ public class Stack<T> implements Iterable {
 
     private Node first;
     private int N;
+    private T latest;
 
     public boolean isEmpty() {
         return first == null;
@@ -26,13 +27,24 @@ public class Stack<T> implements Iterable {
         first.item = t;
         first.next = oldFirst;
         N++;
+        latest = t;
     }
 
     public T pop() {
         T t = first.item;
         first = first.next;
         N--;
+        latest = first.next.item;
         return t;
+    }
+
+    /**
+     * 返回栈中最近添加的元素
+     *
+     * @return
+     */
+    public T peek() {
+        return latest;
     }
 
     @Override

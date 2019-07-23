@@ -7,7 +7,7 @@ public class PartitionApp {
         ArrayPar arr;
         arr = new ArrayPar(maxSize);
 
-        for(int j = 0;j<maxSize;j++){
+        for (int j = 0; j < maxSize; j++) {
             long n = (long) (Math.random() * 199);
             arr.insert(n);
         }
@@ -18,7 +18,7 @@ public class PartitionApp {
         System.out.print("Pivot is " + pivot);
         int size = arr.size();
 
-        int partDex = arr.partition(0,size - 1,pivot);
+        int partDex = arr.partition(0, size - 1, pivot);
         System.out.println(", partiton is at index " + partDex);
         arr.display();
     }

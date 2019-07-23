@@ -5,52 +5,53 @@ import com.tong.lafore.chapterEleven.hashTableInChain.Link;
 public class SortedList {
 
     private Link first;
-    public void SortedList(){
+
+    public void SortedList() {
         first = null;
     }
 
-    public void insert(Link theLink){
+    public void insert(Link theLink) {
         int key = theLink.getKey();
         Link previous = null;
         Link current = first;
 
-        while (current != null && key > current.getKey()){
+        while (current != null && key > current.getKey()) {
             previous = current;
             current = current.next;
         }
 
-        if(previous == null){
+        if (previous == null) {
             first = theLink;
-        }else {
+        } else {
             previous.next = theLink;
         }
 
         theLink.next = current;
     }
 
-    public void delete(int key){
+    public void delete(int key) {
         Link previous = null;
         Link current = first;
 
-        while (current != null && key != current.getKey()){
+        while (current != null && key != current.getKey()) {
             previous = current;
             current = current.next;
         }
 
-        if(previous == null ){
+        if (previous == null) {
             first = first.next;
-        }else {
+        } else {
             previous.next = current.next;
         }
 
 
     }
 
-    public Link find(int key){
+    public Link find(int key) {
         Link current = first;
 
-        while(current != null && current.getKey() <= key){
-            if(current.getKey() == key){
+        while (current != null && current.getKey() <= key) {
+            if (current.getKey() == key) {
                 return current;
             }
             current = current.next;
@@ -58,10 +59,10 @@ public class SortedList {
         return null;
     }
 
-    public void displayList(){
+    public void displayList() {
         System.out.print("List (first-->last): ");
         Link current = first;
-        while (current != null){
+        while (current != null) {
             current.displayLink();
             current = current.next;
         }

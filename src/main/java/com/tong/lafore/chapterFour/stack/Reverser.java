@@ -8,16 +8,16 @@ public class Reverser {
         this.input = input;
     }
 
-    public String doRev(){
+    public String doRev() {
         int stackSize = input.length();
         CharStackX theStack = new CharStackX(stackSize);
-        for(int j = 0; j< stackSize;j++){
+        for (int j = 0; j < stackSize; j++) {
             char ch = input.charAt(j);
             theStack.push(ch);
         }
 
         output = "";
-        while (!theStack.isEmpty()){
+        while (!theStack.isEmpty()) {
             char ch = theStack.pop();
             output = output + ch;
         }

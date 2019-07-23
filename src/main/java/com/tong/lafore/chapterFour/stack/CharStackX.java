@@ -12,23 +12,23 @@ public class CharStackX {
         top = -1;
     }
 
-    public void push(char j){
+    public void push(char j) {
         stackArray[++top] = j;
     }
 
-    public char pop(){
+    public char pop() {
         return stackArray[top--];
     }
 
-    public char peek(){
+    public char peek() {
         return stackArray[top];
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return (top == -1);
     }
 
-    public boolean isFull(){
+    public boolean isFull() {
         return (top == maxSize - 1);
     }
 

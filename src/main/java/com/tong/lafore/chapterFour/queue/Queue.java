@@ -8,7 +8,7 @@ public class Queue {
     private int rear;
     private int nItems;
 
-    public Queue(int s){
+    public Queue(int s) {
         maxSize = s;
         queArray = new long[maxSize];
         front = 0;
@@ -16,36 +16,36 @@ public class Queue {
         nItems = 0;
     }
 
-    public void insert(long j){
-        if(rear == maxSize - 1){
+    public void insert(long j) {
+        if (rear == maxSize - 1) {
             rear = -1;
         }
         queArray[++rear] = j;
         nItems++;
     }
 
-    public long remove(){
+    public long remove() {
         long temp = queArray[front++];
-        if(front==maxSize){
+        if (front == maxSize) {
             front = 0;
         }
         nItems--;
         return temp;
     }
 
-    public long peekFront(){
+    public long peekFront() {
         return queArray[front];
     }
 
-    public boolean isEmpty(){
-        return nItems==0;
+    public boolean isEmpty() {
+        return nItems == 0;
     }
 
-    public boolean isFull(){
+    public boolean isFull() {
         return nItems == maxSize;
     }
 
-    public int size(){
+    public int size() {
         return nItems;
     }
 }

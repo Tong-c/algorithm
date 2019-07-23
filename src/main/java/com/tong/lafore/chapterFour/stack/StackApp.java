@@ -10,7 +10,7 @@ public class StackApp {
         theStack.push(3);
         theStack.push(3);
 
-        while (!theStack.isEmpty()){
+        while (!theStack.isEmpty()) {
             long value = theStack.pop();
             System.out.println(value);
             System.out.println(" ");

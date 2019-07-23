@@ -10,7 +10,7 @@ public class PriorityQApp {
         thePQ.insert(50);
         thePQ.insert(20);
 
-        while (!thePQ.isEmpty()){
+        while (!thePQ.isEmpty()) {
             long item = thePQ.remove();
             System.out.println(item + " ");
         }

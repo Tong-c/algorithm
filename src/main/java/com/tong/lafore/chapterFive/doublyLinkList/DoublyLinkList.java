@@ -6,21 +6,21 @@ public class DoublyLinkList {
     private Link first;
     private Link last;
 
-    public DoublyLinkList(){
+    public DoublyLinkList() {
         first = null;
         last = null;
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return first == null;
     }
 
-    public void insertFirst(long dd){
+    public void insertFirst(long dd) {
         Link newLink = new Link(dd);
 
-        if(isEmpty()){
+        if (isEmpty()) {
             last = newLink;
-        }else {
+        } else {
             first.previous = newLink;
         }
 
@@ -28,11 +28,11 @@ public class DoublyLinkList {
         first = newLink;
     }
 
-    public void insertLast(long dd){
+    public void insertLast(long dd) {
         Link newLink = new Link(dd);
-        if(isEmpty()){
+        if (isEmpty()) {
             first = newLink;
-        }else {
+        } else {
             last.next = newLink;
             newLink.previous = last;
         }
@@ -40,11 +40,11 @@ public class DoublyLinkList {
         last = newLink;
     }
 
-    public Link deleteFirst(){
+    public Link deleteFirst() {
         Link temp = first;
-        if(first.next == null){
+        if (first.next == null) {
             last = null;
-        }else {
+        } else {
             first.next.previous = null;
         }
 
@@ -52,28 +52,28 @@ public class DoublyLinkList {
         return temp;
     }
 
-    public Link deleteLast(){
+    public Link deleteLast() {
         Link temp = last;
-        if(first.next == null){
+        if (first.next == null) {
             first = null;
-        }else {
+        } else {
             last.previous.next = null;
         }
         last = last.previous;
         return temp;
     }
 
-    public boolean insertAfter(long key,long dd){
+    public boolean insertAfter(long key, long dd) {
         Link current = first;
-        while(current.dData != key){
+        while (current.dData != key) {
             current = current.next;
-            if(current == null){
+            if (current == null) {
                 return false;
             }
         }
 
         Link newLink = new Link(dd);
-        if(current == last){
+        if (current == last) {
             newLink.next = null;
             last = newLink;
         } else {
@@ -86,24 +86,24 @@ public class DoublyLinkList {
         return true;
     }
 
-    public Link deleteKey(long key){
+    public Link deleteKey(long key) {
         Link current = first;
-        while (current.dData != key){
+        while (current.dData != key) {
             current = current.next;
-            if(current == null){
+            if (current == null) {
                 return null;
             }
         }
 
-        if(current == first){
+        if (current == first) {
             first = current.next;
-        }else {
+        } else {
             current.previous.next = current.next;
         }
 
-        if(current == last){
+        if (current == last) {
             last = current.previous;
-        }else {
+        } else {
             current.next.previous = current.previous;
         }
 
@@ -111,10 +111,10 @@ public class DoublyLinkList {
     }
 
 
-    public void displayForward(){
+    public void displayForward() {
         System.out.print("List (first-->last): ");
         Link current = first;
-        while (current != null){
+        while (current != null) {
             current.displayLink();
             current = current.next;
         }
@@ -122,22 +122,15 @@ public class DoublyLinkList {
         System.out.println("");
     }
 
-    public void displayBackward(){
+    public void displayBackward() {
         System.out.print("List (last-->first): ");
         Link current = last;
-        while (current != null){
+        while (current != null) {
             current.displayLink();
             current = current.previous;
         }
         System.out.println("");
     }
-
-
-
-
-
-
-
 
 
 }

@@ -26,9 +26,9 @@ public class BinarySerachApp {
         arr.display();
 
         int searchKey = 27;
-        if(arr.find(searchKey)!= arr.size()){
+        if (arr.find(searchKey) != arr.size()) {
             System.out.println("Found " + searchKey);
-        }else {
+        } else {
             System.out.println("Can't find " + searchKey);
         }
     }

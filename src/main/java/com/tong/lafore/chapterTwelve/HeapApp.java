@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
 public class HeapApp {
 
     public static void main(String[] args) throws IOException {
-        int value,value2;
+        int value, value2;
         Heap theHeap = new Heap(31);
         boolean success;
 
@@ -24,12 +24,12 @@ public class HeapApp {
         theHeap.insert(10);
         theHeap.insert(90);
 
-        while (true){
+        while (true) {
             System.out.print("Enter first letter of ");
             System.out.print("show ,insert,delete,or find:");
             char choice = getChar();
 
-            switch (choice){
+            switch (choice) {
                 case 's':
                     theHeap.displayHeap();
                     break;
@@ -37,24 +37,24 @@ public class HeapApp {
                     System.out.print("Enter key value to insert:");
                     value = getInt();
                     success = theHeap.insert(value);
-                    if(!success){
+                    if (!success) {
                         System.out.println("Can't insert:heap full");
                     }
                     break;
                 case 'r':
-                   if (!theHeap.isEmpty()){
-                       theHeap.remove();
-                   }else {
-                       System.out.println("Can't remove;heap empty");
-                   }
+                    if (!theHeap.isEmpty()) {
+                        theHeap.remove();
+                    } else {
+                        System.out.println("Can't remove;heap empty");
+                    }
                     break;
                 case 'c':
                     System.out.print("Enter current index of item:");
                     value = getInt();
                     System.out.print("Enter new key :");
                     value2 = getInt();
-                    success = theHeap.change(value,value2);
-                    if(!success){
+                    success = theHeap.change(value, value2);
+                    if (!success) {
                         System.out.println("Invalid index");
                     }
                     break;

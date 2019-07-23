@@ -9,7 +9,7 @@ public class LinkForSortedList {
         this.dData = dData;
     }
 
-    public void displayLink(){
-        System.out.println(dData+" ");
+    public void displayLink() {
+        System.out.println(dData + " ");
     }
 }

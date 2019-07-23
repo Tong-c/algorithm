@@ -6,12 +6,12 @@ import java.io.InputStreamReader;
 
 public class ReverseApp {
     public static void main(String[] args) {
-        String input,output;
-        while (true){
+        String input, output;
+        while (true) {
             System.out.println("Enter a string : ");
             System.out.flush();
             input = getString();
-            if(input.equals("")){
+            if (input.equals("")) {
                 break;
             }
 
@@ -23,7 +23,7 @@ public class ReverseApp {
     }
 
 
-    public static String getString(){
+    public static String getString() {
         InputStreamReader reader = new InputStreamReader(System.in);
         BufferedReader br = new BufferedReader(reader);
         try {

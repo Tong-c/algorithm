@@ -6,10 +6,11 @@ public class Link {
     public Link next;
     public Link previous;
 
-    public Link(long dd){
+    public Link(long dd) {
         dData = dd;
     }
-    public void displayLink(){
+
+    public void displayLink() {
         System.out.print(dData + " ");
     }
 

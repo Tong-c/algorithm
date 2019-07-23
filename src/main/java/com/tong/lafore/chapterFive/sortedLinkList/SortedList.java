@@ -7,60 +7,58 @@ public class SortedList {
 
     private LinkForSortedList first;
 
-    public SortedList(){
+    public SortedList() {
         first = null;
     }
 
     //用於對無序數組排序
-    public SortedList(LinkForSortedList[] linkArr){
+    public SortedList(LinkForSortedList[] linkArr) {
         first = null;
-        for(int i = 0;i<linkArr.length;i++){
+        for (int i = 0; i < linkArr.length; i++) {
             insert(linkArr[i]);
         }
     }
-    public boolean isEmpty(){
+
+    public boolean isEmpty() {
         return first == null;
     }
 
 
-    public void insert(LinkForSortedList k){
+    public void insert(LinkForSortedList k) {
         insert(k.dData);
     }
 
 
-
-
-
-    public void insert(long key){
+    public void insert(long key) {
 
         LinkForSortedList newLink = new LinkForSortedList(key);
         LinkForSortedList previous = null;
         LinkForSortedList current = first;
 
-        while (current != null && key > current.dData){
+        while (current != null && key > current.dData) {
             previous = current;
             current = current.next;
         }
 
-        if(previous == null){
+        if (previous == null) {
             first = newLink;
-        }else {
+        } else {
             previous.next = newLink;
         }
 
         newLink.next = current;
     }
 
-    public LinkForSortedList remove(){
+    public LinkForSortedList remove() {
         LinkForSortedList temp = first;
         first = first.next;
         return temp;
     }
 
-    public void displayList(){
+    public void displayList() {
         System.out.println("List (first --> last):");
         LinkForSortedList current = first;
-        while (current != null){
+        while (current != null) {
             current.displayLink();
             current = current.next;
         }

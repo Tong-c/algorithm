@@ -6,23 +6,23 @@ public class LinkQueue {
 
     private FirstLastLinkList theList;
 
-    public LinkQueue(){
+    public LinkQueue() {
         theList = new FirstLastLinkList();
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return theList.isEmpty();
     }
 
-    public void insert(long j){
+    public void insert(long j) {
         theList.inserLast(j);
     }
 
-    public long remove(){
+    public long remove() {
         return theList.deleteFirst();
     }
 
-    public void displayQueue(){
+    public void displayQueue() {
         System.out.println("Queue (front-->rear):");
         theList.displayList();
     }

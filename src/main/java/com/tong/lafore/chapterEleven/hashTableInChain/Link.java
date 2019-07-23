@@ -5,15 +5,15 @@ public class Link {
     private int iData;
     public Link next;
 
-    public Link(int it){
+    public Link(int it) {
         iData = it;
     }
 
-    public int getKey(){
+    public int getKey() {
         return iData;
     }
 
-    public void displayLink(){
+    public void displayLink() {
         System.out.print(iData + " ");
     }
 }

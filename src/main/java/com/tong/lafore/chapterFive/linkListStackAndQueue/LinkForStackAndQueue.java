@@ -9,7 +9,7 @@ public class LinkForStackAndQueue {
         this.dData = dd;
     }
 
-    public void displayLink(){
-        System.out.println("{"+ dData + "}");
+    public void displayLink() {
+        System.out.println("{" + dData + "}");
     }
 }

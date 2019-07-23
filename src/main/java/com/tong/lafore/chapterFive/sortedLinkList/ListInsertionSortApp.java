@@ -9,27 +9,27 @@ public class ListInsertionSortApp {
         int size = 10;
         LinkForSortedList[] linkArray = new LinkForSortedList[size];
 
-        for(int i = 0;i<size;i++){
-            int n = (int) (Math.random()*99);
+        for (int i = 0; i < size; i++) {
+            int n = (int) (Math.random() * 99);
             LinkForSortedList newLink = new LinkForSortedList(n);
             linkArray[i] = newLink;
         }
 
         System.out.println("Unsorted array:");
 
-        for(int j = 0;j<size;j++){
-            System.out.print(linkArray[j].dData+" ");
+        for (int j = 0; j < size; j++) {
+            System.out.print(linkArray[j].dData + " ");
         }
         System.out.println(" ");
 
         SortedList theSoredList = new SortedList(linkArray);
 
-        for(int j = 0;j<size;j++){
+        for (int j = 0; j < size; j++) {
             linkArray[j] = theSoredList.remove();
         }
 
         System.out.print("Sorted Array: ");
-        for(int j = 0;j<size;j++){
+        for (int j = 0; j < size; j++) {
             System.out.print(linkArray[j].dData + " ");
         }
         System.out.println("");

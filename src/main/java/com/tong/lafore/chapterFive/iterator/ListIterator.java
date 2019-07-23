@@ -6,37 +6,37 @@ public class ListIterator {
     private Link previous;
     private LinkList ourList;
 
-    public ListIterator(LinkList list){
+    public ListIterator(LinkList list) {
         ourList = list;
         reset();
     }
 
 
-    public void reset(){
+    public void reset() {
         current = ourList.getFirst();
         previous = null;
     }
 
-    public boolean atEnd(){
+    public boolean atEnd() {
         return current.next == null;
     }
 
-    public void nextLink(){
+    public void nextLink() {
         previous = current;
         current = current.next;
     }
 
-    public Link getCurrent(){
+    public Link getCurrent() {
         return current;
     }
 
-    public void insertAfter(long dd){
+    public void insertAfter(long dd) {
         Link newLink = new Link(dd);
 
-        if(ourList.isEmpty()){
+        if (ourList.isEmpty()) {
             ourList.setFirst(newLink);
             current = newLink;
-        }else {
+        } else {
             newLink.next = current.next;
             current.next = newLink;
             nextLink();
@@ -44,29 +44,29 @@ public class ListIterator {
     }
 
 
-    public void insertBefore(long dd){
+    public void insertBefore(long dd) {
         Link newLink = new Link(dd);
-        if(previous ==  null){
+        if (previous == null) {
             newLink.next = ourList.getFirst();
             ourList.setFirst(newLink);
             reset();
-        }else {
+        } else {
             newLink.next = previous.next;
             previous.next = newLink;
             current = newLink;
         }
     }
 
-    public long deleteCurrent(){
+    public long deleteCurrent() {
         long value = current.dData;
-        if(previous == null){
+        if (previous == null) {
             ourList.setFirst(current.next);
             reset();
-        }else {
+        } else {
             previous.next = current.next;
-            if(atEnd()){
+            if (atEnd()) {
                 reset();
-            }else {
+            } else {
                 current = current.next;
             }
         }

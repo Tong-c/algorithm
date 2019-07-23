@@ -12,40 +12,40 @@ public class TreeApp {
 
         Tree theTree = new Tree();
 
-        theTree.insert(50,1.5);
-        theTree.insert(25,1.2);
-        theTree.insert(75,1.7);
-        theTree.insert(12,1.5);
-        theTree.insert(37,1.2);
-        theTree.insert(43,1.7);
-        theTree.insert(30,1.5);
-        theTree.insert(33,1.2);
-        theTree.insert(87,1.7);
-        theTree.insert(93,1.5);
-        theTree.insert(97,1.5);
+        theTree.insert(50, 1.5);
+        theTree.insert(25, 1.2);
+        theTree.insert(75, 1.7);
+        theTree.insert(12, 1.5);
+        theTree.insert(37, 1.2);
+        theTree.insert(43, 1.7);
+        theTree.insert(30, 1.5);
+        theTree.insert(33, 1.2);
+        theTree.insert(87, 1.7);
+        theTree.insert(93, 1.5);
+        theTree.insert(97, 1.5);
 
-        while (true){
+        while (true) {
             System.out.print("Enter first letter of show,");
             System.out.print("insert,find,delete,or traverse: ");
             int choice = getChar();
-            switch (choice){
+            switch (choice) {
                 case 's':
                     theTree.displayTree();
                     break;
                 case 'i':
                     System.out.print("Enter value to insert : ");
                     value = getInt();
-                    theTree.insert(value,value + 0.9);
+                    theTree.insert(value, value + 0.9);
                     break;
                 case 'f':
                     System.out.print("Enter value to find: ");
                     value = getInt();
                     Node found = theTree.find(value);
-                    if(found != null){
+                    if (found != null) {
                         System.out.print("Found: ");
                         found.displayNode();
                         System.out.print("\n");
-                    }else {
+                    } else {
                         System.out.print("Could not find ");
                         System.out.print(value + "\n");
                     }
@@ -54,9 +54,9 @@ public class TreeApp {
                     System.out.print("Enter value to delete:");
                     value = getInt();
                     boolean didDelete = theTree.delete(value);
-                    if(didDelete){
+                    if (didDelete) {
                         System.out.print("Deleted " + value + '\n');
-                    }else {
+                    } else {
                         System.out.print("Could not delete ");
                         System.out.print(value + '\n');
                     }
@@ -76,10 +76,9 @@ public class TreeApp {
     }
 
 
-
     public static char getChar() throws IOException {
-      String s = getString();
-      return s.charAt(0);
+        String s = getString();
+        return s.charAt(0);
     }
 
 

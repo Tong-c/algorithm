@@ -8,7 +8,7 @@ public class HashTableApp {
 
     public static void main(String[] args) throws IOException {
         DataItem aDataItem;
-        int aKey,size,n,keysPerCell;
+        int aKey, size, n, keysPerCell;
 
         System.out.print("Enter size of hash table:");
         size = getInt();
@@ -18,18 +18,18 @@ public class HashTableApp {
 
         HashTable theHashTable = new HashTable(size);
 
-        for(int j = 0;j < n;j++){
+        for (int j = 0; j < n; j++) {
             aKey = (int) (Math.random() * keysPerCell * size);
             aDataItem = new DataItem(aKey);
             theHashTable.insert(aDataItem);
         }
 
-        while (true){
+        while (true) {
             System.out.print("Enter first letter of ");
             System.out.print("show ,insert,delete,or find:");
             char choice = getChar();
 
-            switch (choice){
+            switch (choice) {
                 case 's':
                     theHashTable.displayTable();
                     break;
@@ -48,9 +48,9 @@ public class HashTableApp {
                     System.out.print("Enter key value to find:");
                     aKey = getInt();
                     aDataItem = theHashTable.find(aKey);
-                    if(aDataItem != null){
+                    if (aDataItem != null) {
                         System.out.println("Found " + aKey);
-                    }else {
+                    } else {
                         System.out.println("Could not find " + aKey);
                     }
                     break;

@@ -7,8 +7,8 @@ public class QuickSort2App {
         ArrayIns2 arr;
         arr = new ArrayIns2(maxSize);
 
-        for(int j = 0;j < maxSize;j++){
-            long n = (long) (Math.random()*99);
+        for (int j = 0; j < maxSize; j++) {
+            long n = (long) (Math.random() * 99);
             arr.insert(n);
         }
 

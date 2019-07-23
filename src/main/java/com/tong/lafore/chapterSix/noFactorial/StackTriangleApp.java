@@ -21,29 +21,29 @@ public class StackTriangleApp {
     private static void recTriangle() {
         theStack = new StackX(10000);
         codePart = 1;
-        while (step() == false){
+        while (step() == false) {
 
         }
     }
 
     private static boolean step() {
-        switch (codePart){
+        switch (codePart) {
             case 1:
-                theseParams = new Params(theNumber,6);
+                theseParams = new Params(theNumber, 6);
                 theStack.push(theseParams);
                 codePart = 2;
                 break;
             case 2:
                 theseParams = theStack.peek();
-                if(theseParams.n == 1){
+                if (theseParams.n == 1) {
                     theAnswer = 1;
                     codePart = 5;
-                }else {
+                } else {
                     codePart = 3;
                 }
                 break;
             case 3:
-                Params newParams = new Params(theseParams.n - 1,4);
+                Params newParams = new Params(theseParams.n - 1, 4);
                 theStack.push(newParams);
                 codePart = 2;
                 break;
