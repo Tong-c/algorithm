@@ -28,7 +28,7 @@ public class ListInsertionSortApp {
             linkArray[j] = theSoredList.remove();
         }
 
-        System.out.print("Sorted Array: ");
+        System.out.print("Sorted TArray: ");
         for (int j = 0; j < size; j++) {
             System.out.print(linkArray[j].dData + " ");
         }
