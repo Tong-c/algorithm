@@ -65,6 +65,8 @@ public class TFixedArray {
         array.put(2);
         array.put(1);
         array.put(8);
+
+        array.remove(8);
         System.out.println(array);
     }
 }
