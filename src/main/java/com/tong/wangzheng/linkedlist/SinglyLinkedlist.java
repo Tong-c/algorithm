@@ -5,22 +5,89 @@ package com.tong.wangzheng.linkedlist;
  */
 public class SinglyLinkedlist {
 
-    private Node head;
+    private Node head = null;
+    private Node;
 
-    public void add(Node node) {
-        if (head.next == null) {
-            head.next = node;
+
+    /**
+     * 从头部插入
+     *
+     * @param newNode
+     */
+    public void addToHead(Node newNode) {
+        newNode.next = head;
+        head = newNode;
+    }
+
+    /**
+     * 从尾部插入
+     */
+    public void addToTail(Node newNode) {
+        if (head == null) {
+            head = newNode;
         } else {
-            node.next = head.next;
-            head.next = node;
+            Node node = head;
+            while (node.next != null) {
+                node = node.next;
+            }
+            newNode.next = node.next;
+            node.next = newNode;
+        }
+    }
+
+    /**
+     * 根据数值，删除节点
+     *
+     * @param data
+     * @return
+     */
+    public Node deleteByValue(int data) {
+        Node current = head;
+        Node previous = head;
+
+        while (current.getData() != data) {
+            if (current.next == null) {
+                return null;
+            } else {
+                previous = current;
+                current = current.next;
+            }
         }
 
+        if (current == head) {
+            head = head.next;
+        } else {
+            previous.next = current.next;
+        }
+
+        return current;
+    }
+
+    /**
+     * 根据数值，查找节点
+     *
+     * @param data
+     * @return
+     */
+    public Node findByValue(int data) {
+        Node currNode = head;
+        while (currNode.getData() != data) {
+            if (currNode.getNext() == null) {
+                return null;
+            }
+            currNode = currNode.next;
+        }
+        return currNode;
     }
 
 
-    class Node {
+    static class Node {
         int data;
         Node next;
+
+        public Node(int data) {
+            this.data = data;
+        }
 
         public int getData() {
             return data;
@@ -42,6 +109,10 @@ public class SinglyLinkedlist {
 
     public static void main(String[] args) {
         SinglyLinkedlist list = new SinglyLinkedlist();
+        list.addToHead(new Node(6));
+        list.addToHead(new Node(8));
+        list.addToHead(new Node(9));
+        System.out.println(list);
     }
 
 }
