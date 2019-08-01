@@ -62,7 +62,7 @@ public class LoopSinglyLinkedlist {
         while (currNode.next != head) {
             int currData = currNode.data;
             if (currData == data) {
-                if (currNode == head) {
+                if (currNode == head) {//头节点删除
                     head = currNode.next;
                     prev = head;
                     currNode = head;
@@ -76,7 +76,7 @@ public class LoopSinglyLinkedlist {
                 currNode = currNode.next;
             }
         }
-        if (currNode.data == data) {
+        if (currNode.data == data) {//尾节点删除
             prev.next = head;
             size--;
         }

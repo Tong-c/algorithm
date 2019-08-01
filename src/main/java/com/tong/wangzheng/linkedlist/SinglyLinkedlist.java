@@ -7,7 +7,6 @@ public class SinglyLinkedlist {
 
     private Node head = null;
 
-
     /**
      * 从头部插入
      *
@@ -79,6 +78,47 @@ public class SinglyLinkedlist {
         return currNode;
     }
 
+    /**
+     * 单链表反转-类似于头插法
+     */
+    public void reverse() {
+        Node newHead = null;
+        Node newCurr = null;
+        Node curr = head;
+        while (curr.next != null) {
+            if (curr == head) {
+                newHead = new Node(head.getData());
+            } else {
+                newCurr.next = newHead;
+                newHead = newCurr;
+            }
+            curr = curr.next;
+            newCurr = new Node(curr.getData());
+        }
+
+        Node newNode = new Node(curr.getData());
+        newNode.next = newHead;
+        newHead = newNode;
+
+        head = newHead;
+    }
+
+
+    /**
+     * 单链表反转-双指针迭代法
+     */
+    public void reverse2() {
+        Node prev = null;
+        Node curr = head;
+        while (curr != null) {
+            Node nextNode = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextNode;
+        }
+        head = prev;
+    }
+
 
     static class Node {
         int data;
@@ -111,6 +151,9 @@ public class SinglyLinkedlist {
         list.addToHead(new Node(6));
         list.addToHead(new Node(8));
         list.addToHead(new Node(9));
+        list.addToHead(new Node(10));
+        list.addToHead(new Node(11));
+        list.reverse2();
         System.out.println(list);
     }
 
