@@ -6,7 +6,6 @@ package com.tong.wangzheng.linkedlist;
 public class SinglyLinkedlist {
 
     private Node head = null;
-    private Node;
 
 
     /**
