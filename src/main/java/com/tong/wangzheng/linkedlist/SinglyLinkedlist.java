@@ -119,6 +119,19 @@ public class SinglyLinkedlist {
         head = prev;
     }
 
+    /**
+     * 单链表反转-递归法
+     */
+    public Node reverse3(Node current) {
+        if (current == null || current.next == null) {
+            return current;
+        }
+        Node reverseNode = reverse3(current.next);
+        current.next.next = current;
+        current.next = null;
+        return reverseNode;
+    }
+
 
     static class Node {
         int data;
@@ -151,9 +164,8 @@ public class SinglyLinkedlist {
         list.addToHead(new Node(6));
         list.addToHead(new Node(8));
         list.addToHead(new Node(9));
-        list.addToHead(new Node(10));
-        list.addToHead(new Node(11));
-        list.reverse2();
+        Node newHead = list.reverse3(list.head);
+        list.head = newHead;
         System.out.println(list);
     }
 
