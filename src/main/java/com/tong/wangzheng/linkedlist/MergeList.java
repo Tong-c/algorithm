@@ -35,6 +35,27 @@ public class MergeList {
         return newNode;
     }
 
+    /**
+     * 递归法
+     */
+    public static SinglyLinkedlist.Node mergeTwoListsTwo(SinglyLinkedlist.Node list1, SinglyLinkedlist.Node list2) {
+        if (list1 == null) {
+            return list2;
+        }
+
+        if (list2 == null) {
+            return list1;
+        }
+
+        if (list1.data < list2.data) {
+            list1.next = mergeTwoListsTwo(list1.next, list2);
+            return list1;
+        } else {
+            list2.next = mergeTwoListsTwo(list1, list2.next);
+            return list2;
+        }
+    }
+
 
     private static SinglyLinkedlist.Node addToNewNode(int data, SinglyLinkedlist.Node newNode) {
         SinglyLinkedlist.Node node = new SinglyLinkedlist.Node(data);
@@ -60,7 +81,7 @@ public class MergeList {
         n2.next = new SinglyLinkedlist.Node(3);
         n2.next.next = new SinglyLinkedlist.Node(5);
 
-        SinglyLinkedlist.Node node = mergeTwoLists(n1, n2);
+        SinglyLinkedlist.Node node = mergeTwoListsTwo(n1, n2);
         System.out.println(node);
     }
 }
