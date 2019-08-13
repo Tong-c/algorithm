@@ -6,7 +6,6 @@ package com.tong.wangzheng.stack;
  */
 public class LinkedListStack {
 
-
     private Node head;
     private int count;
 
@@ -38,7 +37,6 @@ public class LinkedListStack {
         count--;
         return currNode.data;
     }
-
 
 
     static class Node {
