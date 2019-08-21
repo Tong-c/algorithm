@@ -1,6 +1,5 @@
 package com.tong.wangzheng.recursion;
 
-import java.util.List;
 
 /**
  * 递归
@@ -27,13 +26,33 @@ public class Recursion {
     /**
      * 全排列
      */
-    public static List<List<Integer>> permute() {
-        return null;
+    public static void permute(char[] data, int start, int end) {
+        if (end <= 1) {
+            return;
+        }
+        if (start == end) {
+            System.out.println(data);
+        } else {
+            for (int i = start; i <= end; i++) {
+                swap(data, i, start);
+                permute(data, start + 1, end);
+                swap(data, start, i);
+            }
+        }
+    }
+
+
+    private static void swap(char[] data, int i, int j) {
+        char temp = data[i];
+        data[i] = data[j];
+        data[j] = temp;
     }
 
 
     public static void main(String[] args) {
-        System.out.println(fibonacci(6));
-        System.out.println(factorial(6));
+//        System.out.println(fibonacci(6));
+//        System.out.println(factorial(6));
+        char[] data = {'2', '3', '4', '5', '6', '7'};
+        permute(data, 0, 5);
     }
 }
