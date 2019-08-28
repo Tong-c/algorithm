@@ -37,7 +37,24 @@ public class Sort {
      * 插入排序
      */
     public void insertSort(int[] nums) {
-        
+        int length = nums.length;
+        if (length <= 1) {
+            System.out.println(Arrays.toString(nums));
+            return;
+        }
+
+        for (int i = 1; i < length; i++) {
+            for (int j = 0; j < i; j++) {
+                int currUnOrder = nums[i];
+                int currOrder = nums[j];
+                if (currUnOrder < currOrder) {
+                    swap(nums, i, j);
+                    continue;
+                }
+            }
+        }
+
+        System.out.println(Arrays.toString(nums));
     }
 
 
@@ -49,8 +66,8 @@ public class Sort {
 
 
     public static void main(String[] args) {
-        int[] data = {1};
+        int[] data = {3, 2, 1, 10, 4, 5};
         Sort sort = new Sort();
-        sort.bubbleSort(data);
+        sort.insertSort(data);
     }
 }
