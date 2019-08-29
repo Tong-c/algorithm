@@ -1,5 +1,7 @@
 package com.tong.wangzheng.sort;
 
+import com.tong.wangzheng.queue.ArrayQueue;
+
 import java.util.Arrays;
 
 /**
@@ -57,6 +59,30 @@ public class Sort {
         System.out.println(Arrays.toString(nums));
     }
 
+    /**
+     * 选择排序
+     */
+    public void selectSort(int[] nums) {
+        int length = nums.length;
+        if (length <= 1) {
+            System.out.println(Arrays.toString(nums));
+            return;
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+            int indexOfMin = i;
+            for (int j = i; j < nums.length - 1; j++) {
+                if (nums[indexOfMin] > nums[j + 1]) {
+                    indexOfMin = j + 1;
+                }
+            }
+            swap(nums, i, indexOfMin);
+        }
+
+        System.out.println(Arrays.toString(nums));
+
+    }
+
 
     private void swap(int[] nums, int index1, int index2) {
         int temp = nums[index1];
@@ -68,6 +94,6 @@ public class Sort {
     public static void main(String[] args) {
         int[] data = {3, 2, 1, 10, 4, 5};
         Sort sort = new Sort();
-        sort.insertSort(data);
+        sort.selectSort(data);
     }
 }
