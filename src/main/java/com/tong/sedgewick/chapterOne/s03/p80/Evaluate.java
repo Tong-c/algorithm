@@ -1,15 +1,15 @@
 package com.tong.sedgewick.chapterOne.s03.p80;
 
-import edu.princeton.cs.algs4.Stack;
+/*import edu.princeton.cs.algs4.Stack;
 import edu.princeton.cs.algs4.StdIn;
-import edu.princeton.cs.algs4.StdOut;
+import edu.princeton.cs.algs4.StdOut;*/
 
 /**
  * Dijkstra的双栈算术表达式求值算法
  */
 public class Evaluate {
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         Stack<String> ops = new Stack<>(); //操作数栈
         Stack<Double> vals = new Stack<>(); //运算符栈
 
@@ -47,5 +47,5 @@ public class Evaluate {
             }
         }
         StdOut.println(vals.pop());
-    }
+    }*/
 }

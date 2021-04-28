@@ -1,7 +1,5 @@
 package com.tong.sedgewick.chapterOne.s04.p109;
 
-import edu.princeton.cs.algs4.In;
-import edu.princeton.cs.algs4.StdOut;
 
 public class ThreeSum {
 
@@ -21,7 +19,7 @@ public class ThreeSum {
     }
 
     public static void main(String[] args) {
-        int[] a = In.readInts(args[0]);
-        StdOut.println(count(a));
+        /*int[] a = In.readInts(args[0]);
+        StdOut.println(count(a));*/
     }
 }

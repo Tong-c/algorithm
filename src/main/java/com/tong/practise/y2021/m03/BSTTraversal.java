@@ -75,6 +75,87 @@ public class BSTTraversal {
         return result;
     }
 
+    /**
+     * 层序遍历
+     *
+     * @param root 根节点
+     * @return 遍历结果
+     */
+    public List<List<Integer>> levelOrderBottom(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
+        if (null == root) {
+            return result;
+        }
+        List<TreeNode> levelNodeList = new ArrayList<>();
+        levelNodeList.add(root);
+        while (levelNodeList.size() > 0) {
+            List<TreeNode> newLevelNodeList = new ArrayList<>();
+            List<Integer> levelValList = new ArrayList<>();
+            for (TreeNode treeNode : levelNodeList) {
+                levelValList.add(treeNode.val);
+                if (null != treeNode.left) {
+                    newLevelNodeList.add(treeNode.left);
+                }
+                if (null != treeNode.right) {
+                    newLevelNodeList.add(treeNode.right);
+                }
+            }
+            result.add(levelValList);
+            levelNodeList = newLevelNodeList;
+        }
+
+        List<List<Integer>> bottomResult = new ArrayList<>();
+        for (int i = 0; i < result.size(); i++) {
+            bottomResult.add(result.get(result.size() - i - 1));
+        }
+        return bottomResult;
+    }
+
+    /**
+     * 锯齿形层序遍历
+     *
+     * @param root 根节点
+     * @return 遍历结果
+     */
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
+        if (null == root) {
+            return result;
+        }
+        List<TreeNode> levelNodeList = new ArrayList<>();
+        levelNodeList.add(root);
+        while (levelNodeList.size() > 0) {
+            List<TreeNode> newLevelNodeList = new ArrayList<>();
+            List<Integer> levelValList = new ArrayList<>();
+            for (TreeNode treeNode : levelNodeList) {
+                levelValList.add(treeNode.val);
+                if (null != treeNode.left) {
+                    newLevelNodeList.add(treeNode.left);
+                }
+                if (null != treeNode.right) {
+                    newLevelNodeList.add(treeNode.right);
+                }
+            }
+            result.add(levelValList);
+            levelNodeList = newLevelNodeList;
+        }
+
+        List<List<Integer>> zigzagResult = new ArrayList<>();
+        for (int i = 0; i < result.size(); i++) {
+            if (i % 2 == 1) {
+                List<Integer> toReverseList = result.get(i);
+                List<Integer> tempList = new ArrayList<>();
+                for (int j = 0; j < toReverseList.size(); j++) {
+                    tempList.add(toReverseList.get(toReverseList.size() - j - 1));
+                }
+                zigzagResult.add(tempList);
+            } else {
+                zigzagResult.add(result.get(i));
+            }
+        }
+        return zigzagResult;
+    }
+
     private List<Integer> inTraversal(TreeNode root, List<Integer> result) {
         if (null == root) {
             return null;
