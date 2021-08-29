@@ -104,10 +104,10 @@ public class Link {
      * @see <a href= "https://leetcode-cn.com/problems/merge-two-sorted-lists/">21. 合并两个有序链表</a>
      */
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-       ListNode newNode = new ListNode(-1);
-       ListNode l1Ptr = l1;
-       ListNode l2Ptr = l2;
-       ListNode newNodePtr = newNode;
+        ListNode newNode = new ListNode(-1);
+        ListNode l1Ptr = l1;
+        ListNode l2Ptr = l2;
+        ListNode newNodePtr = newNode;
         while (l1Ptr != null && l2Ptr != null) {
             if (l1Ptr.val >= l2Ptr.val) {
                 newNodePtr = l2Ptr;
@@ -132,18 +132,98 @@ public class Link {
     }
 
 
+    /**
+     * 分隔链表
+     *
+     * @param head 链表头节点
+     * @param x    特定值
+     * @return 分隔后链表的头节点
+     * @see <a href= "https://leetcode-cn.com/problems/partition-list/">86. 分隔链表</a>
+     */
+    public ListNode partition(ListNode head, int x) {
+
+        ListNode curr = head;
+
+        ListNode leftNode = new ListNode(-101);
+        ListNode leftNodePtr = leftNode;
+
+        ListNode rightNode = new ListNode(-101);
+        ListNode rightNodePtr = rightNode;
+
+        while (curr != null) {
+            if (curr.val < x) {
+                leftNodePtr.next = curr;
+                leftNodePtr = leftNodePtr.next;
+            } else {
+                rightNodePtr.next = curr;
+                rightNodePtr = rightNodePtr.next;
+            }
+            curr = curr.next;
+        }
+        rightNodePtr.next = null;
+        leftNodePtr.next = rightNode.next;
+        return leftNode.next;
+    }
+
+    /**
+     * 排序链表
+     *
+     * @param head 链表头节点
+     * @return 排序后链表头节点
+     * @see <a href= "https://leetcode-cn.com/problems/sort-list/">148. 排序链表</a>
+     */
+    public ListNode sortList(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        ListNode fast = head.next;
+        ListNode slow = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        ListNode tmp = slow.next;
+        slow.next = null;
+        return null;
+    }
+
+
+    private ListNode findLastNode(ListNode head) {
+        ListNode curr = head;
+        while (curr != null) {
+            curr = curr.next;
+        }
+        return curr;
+    }
+
+    private ListNode findMidNode(ListNode head, ListNode tail) {
+        ListNode fast = head;
+        ListNode slow = head;
+        while (fast != null && fast.val != tail.val) {
+            if (slow.val == tail.val) {
+                break;
+            }
+            slow = slow.next;
+            fast = slow.next;
+        }
+        return slow;
+    }
+
     public static void main(String[] args) {
         Link link = new Link();
         ListNode head = new ListNode(1);
-        ListNode node1 = new ListNode(2);
+        ListNode node1 = new ListNode(4);
         ListNode node2 = new ListNode(3);
-        ListNode node3 = new ListNode(4);
+        ListNode node3 = new ListNode(2);
         ListNode node4 = new ListNode(5);
+        ListNode node5 = new ListNode(2);
         head.next = node1;
         node1.next = node2;
         node2.next = node3;
         node3.next = node4;
-        link.reverseBetween(head, 2, 4);
+        node4.next = node5;
+        link.sortList(head);
 
         System.out.println("");
 
