@@ -35,29 +35,26 @@ public class SortListClass {
 
     private ListNode merge(ListNode leftNode, ListNode rightNode) {
         ListNode dummyNode = new ListNode(-1);
-        dummyNode.next = leftNode;
-        ListNode dummyPtr = dummyNode;
         ListNode leftPtr = leftNode;
         ListNode rightPtr = rightNode;
+        ListNode dummyPtr = dummyNode;
         while (null != leftPtr && null != rightPtr) {
             int leftNodeVal = leftPtr.val;
             int rightNodeVal = rightPtr.val;
 
             if (leftNodeVal <= rightNodeVal) {
+                dummyPtr.next = leftPtr;
                 leftPtr = leftPtr.next;
-                dummyPtr.next = leftNode;
             } else {
+                dummyPtr.next = rightPtr;
                 rightPtr = rightPtr.next;
-                dummyPtr.next = rightNode;
             }
             dummyPtr = dummyPtr.next;
         }
 
         if (null != rightPtr) {
             dummyPtr.next = rightPtr;
-        }
-
-        if (null != leftPtr) {
+        } else if (null != leftPtr) {
             dummyPtr.next = leftPtr;
         }
 
