@@ -5,6 +5,9 @@ import com.tong.practise.y2021.m03.ListNode;
 public class ReOrderListClass {
 
     public ListNode reorderList(ListNode head) {
+        if (null == head || null == head.next) {
+            return head;
+        }
         ListNode fastNode = head;
         ListNode slowNode = head;
         ListNode beforeMiddleNode = null;
@@ -13,17 +16,53 @@ public class ReOrderListClass {
             beforeMiddleNode = slowNode;
             slowNode = slowNode.next;
         }
+        beforeMiddleNode.next = null;
 
-        ListNode lowerNode = head;
-        ListNode upperNode = slowNode;
+        ListNode upperNode = reverseNode(slowNode);
 
+        ListNode lowerPtr = head;
+        ListNode upperPtr = upperNode;
+        ListNode dummyNode = new ListNode(-1);
+        ListNode newPtr = dummyNode;
+        while (lowerPtr != null && upperPtr != null) {
+            newPtr.next = lowerPtr;
+            lowerPtr = lowerPtr.next;
+            newPtr = newPtr.next;
 
-        return null;
+            newPtr.next = upperPtr;
+            upperPtr = upperPtr.next;
+            newPtr = newPtr.next;
+        }
+
+        if (null != lowerPtr) {
+            newPtr.next = lowerPtr;
+        }
+
+        if (null != upperPtr) {
+            newPtr.next = upperPtr;
+        }
+
+        return dummyNode.next;
     }
 
-    private ListNode reverseNode(ListNode head) {
-        
-        return null;
+    private static ListNode reverseNode(ListNode head) {
+
+        if (null == head || null == head.next) {
+            return head;
+        }
+
+        ListNode prevNode = null;
+        ListNode nextNode = null;
+        ListNode currNode = head;
+
+        while (null != currNode.next) {
+            nextNode = currNode.next;
+            currNode.next = prevNode;
+            prevNode = currNode;
+            currNode = nextNode;
+        }
+        currNode.next = prevNode;
+        return currNode;
     }
 
     public static void main(String[] args) {
@@ -37,5 +76,7 @@ public class ReOrderListClass {
         node2.next = node3;
         node3.next = node4;
         ReOrderListClass reOrderListClass = new ReOrderListClass();
+        ListNode result = reOrderListClass.reorderList(head);
+        System.out.println(result);
     }
 }
