@@ -2,7 +2,7 @@ package com.tong.practise.y2021.m10;
 
 import com.tong.practise.y2021.m03.ListNode;
 
-public class ReOrderListClass {
+public class ReOrderList {
 
     public ListNode reorderList(ListNode head) {
         if (null == head || null == head.next) {
@@ -75,8 +75,8 @@ public class ReOrderListClass {
         node1.next = node2;
         node2.next = node3;
         node3.next = node4;
-        ReOrderListClass reOrderListClass = new ReOrderListClass();
-        ListNode result = reOrderListClass.reorderList(head);
+        ReOrderList reOrderList = new ReOrderList();
+        ListNode result = reOrderList.reorderList(head);
         System.out.println(result);
     }
 }

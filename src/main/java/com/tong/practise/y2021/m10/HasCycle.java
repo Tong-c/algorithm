@@ -5,7 +5,7 @@ import com.tong.practise.y2021.m03.ListNode;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HasCycleClass {
+public class HasCycle {
 
     public boolean hasCycle(ListNode head) {
         if (null == head || null == head.next) {

@@ -2,7 +2,7 @@ package com.tong.practise.y2021.m11;
 
 import com.tong.practise.y2021.m03.ListNode;
 
-public class HasCycle2Class {
+public class HasCycle2 {
 
     public ListNode detectCycle(ListNode head) {
         if (null == head || null == head.next) {

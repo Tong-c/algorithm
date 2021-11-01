@@ -5,7 +5,7 @@ import com.tong.practise.y2021.m03.ListNode;
 /**
  * 链表排序
  */
-public class SortListClass {
+public class SortList {
 
     public ListNode sortList(ListNode head) {
         if (null == head || null == head.next) {
@@ -74,8 +74,8 @@ public class SortListClass {
         node2.next = node3;
         node3.next = node4;
         node4.next = node5;
-        SortListClass sortListClass = new SortListClass();
-        ListNode sortedListNode = sortListClass.sortList(head);
+        SortList sortList = new SortList();
+        ListNode sortedListNode = sortList.sortList(head);
         System.out.println(sortedListNode);
     }
 }
