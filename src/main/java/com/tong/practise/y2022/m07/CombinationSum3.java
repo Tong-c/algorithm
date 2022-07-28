@@ -27,7 +27,7 @@ public class CombinationSum3 {
             return;
         }
 
-        for (int i = begin; i < 9; i++) {
+        for (int i = begin; i <= 9; i++) {
             path.addLast(i);
             dfs(n - i, k, i + 1, path, result);
             path.removeLast();
