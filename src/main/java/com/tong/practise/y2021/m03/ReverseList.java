@@ -1,5 +1,7 @@
 package com.tong.practise.y2021.m03;
 
+import com.tong.practise.base.ListNode;
+
 public class ReverseList {
 
     /**

@@ -1,6 +1,6 @@
 package com.tong.practise.y2021.m10;
 
-import com.tong.practise.y2021.m03.ListNode;
+import com.tong.practise.base.ListNode;
 
 public class ReOrderList {
 
