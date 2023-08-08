@@ -1,4 +1,4 @@
-package com.tong.practise.y2023.m07.linklist;
+package com.tong.practise.y2023.linklist;
 
 import com.tong.practise.base.ListNode;
 

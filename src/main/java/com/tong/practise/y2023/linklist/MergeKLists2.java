@@ -1,41 +1,40 @@
-package com.tong.practise.y2023.m07.linklist;
+package com.tong.practise.y2023.linklist;
 
 import com.tong.practise.base.ListNode;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.PriorityQueue;
 
-public class MergeKLists {
+public class MergeKLists2 {
 
     public ListNode mergeKLists(ListNode[] lists) {
-        if (lists.length == 0) {
+        if (lists == null || lists.length == 0) {
             return null;
         }
 
-        ListNode dummy = new ListNode(-1);
-        ListNode p = dummy;
-        PriorityQueue<ListNode> pq = new PriorityQueue<>(lists.length, (a, b) -> (a.val - b.val));
-        for (ListNode head : lists) {
-            if (head != null) {
-                pq.add(head);
+        PriorityQueue<ListNode> pq = new PriorityQueue<>((a, b) -> a.val - b.val);
+        for (ListNode listNode : lists) {
+            if (listNode != null) {
+                pq.add(listNode);
             }
         }
 
+        ListNode dummy = new ListNode(-1);
+        ListNode dummyP = dummy;
         while (!pq.isEmpty()) {
             ListNode node = pq.poll();
-            p.next = node;
+            dummyP.next = node;
             if (node.next != null) {
                 pq.add(node.next);
             }
-            p = p.next;
+            dummyP = dummyP.next;
         }
+
         return dummy.next;
     }
 
 
     public static void main(String[] args) {
-        MergeKLists mergeKLists = new MergeKLists();
+        MergeKLists2 mergeKLists = new MergeKLists2();
         ListNode head1 = new ListNode(1);
         ListNode node12 = new ListNode(4);
         ListNode node13 = new ListNode(5);
@@ -53,6 +52,7 @@ public class MergeKLists {
         head3.next = node32;
 
         ListNode[] list = {head1, head2, head3};
-        mergeKLists.mergeKLists(list);
+        ListNode result = mergeKLists.mergeKLists(list);
+        System.out.println(result);
     }
 }
