@@ -17,15 +17,15 @@ public class SpiralOrder_54 {
                 result.add(matrix[startRow][i]);
             }
 
-            for (int i = startRow; i <= endRow; i++) {
+            for (int i = startRow + 1; i <= endRow; i++) {
                 result.add(matrix[i][endCol]);
             }
 
-            for (int i = endCol; i >= startCol; i--) {
+            for (int i = endCol - 1; i >= startCol; i--) {
                 result.add(matrix[endRow][i]);
             }
 
-            for (int i = endRow; i > startRow; i--) {
+            for (int i = endRow - 1; i > startRow; i--) {
                 result.add(matrix[i][startCol]);
             }
 
