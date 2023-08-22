@@ -1,5 +1,6 @@
 package com.tong.practise.y2023.matrix;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,11 +22,15 @@ public class SpiralOrder_54 {
                 result.add(matrix[i][endCol]);
             }
 
+            if (startRow == endRow || startCol == endCol) {
+                break;
+            }
+
             for (int i = endCol - 1; i >= startCol; i--) {
                 result.add(matrix[endRow][i]);
             }
 
-            for (int i = endRow - 1; i > startRow; i--) {
+            for (int i = endRow - 1; i >= startRow + 1; i--) {
                 result.add(matrix[i][startCol]);
             }
 
@@ -38,10 +43,12 @@ public class SpiralOrder_54 {
         return result;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnsupportedEncodingException {
         SpiralOrder_54 spiralOrder = new SpiralOrder_54();
-        int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-        List<Integer> result = spiralOrder.spiralOrder(matrix);
-        System.out.println(result);
+        // 1, 2, 3, 4
+        // 5, 6, 7, 8
+        // 9, 10, 11, 12
+        int[][] matrix = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};
+        System.out.println(spiralOrder.spiralOrder(matrix));
     }
 }
