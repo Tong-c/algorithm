@@ -42,17 +42,13 @@ public class CheckInclusion {
                 }
             }
         }
-
-        if (r - l == s1.length()) {
-            return true;
-        }
         return false;
     }
 
     public static void main(String[] args) {
         CheckInclusion checkInclusion = new CheckInclusion();
-        String s1 = "ea";
-        String s2 = "eldbeaooo";
+        String s1 = "a";
+        String s2 = "bacd";
         boolean result = checkInclusion.checkInclusion(s1, s2);
         System.out.println(result);
     }
