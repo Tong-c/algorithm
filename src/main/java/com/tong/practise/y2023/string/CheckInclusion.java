@@ -23,19 +23,36 @@ public class CheckInclusion {
                 window.put(sChar, window.getOrDefault(sChar, 0) + 1);
                 if (window.get(sChar).equals(ori.get(sChar))) {
                     valid++;
-                    if (valid == ori.size()) {
-                        return true;
+                }
+            }
+
+            while (valid == ori.size()) {
+                if (r - l == s1.length()) {
+                    return true;
+                } else {
+                    char c = s2.charAt(l);
+                    l++;
+
+                    if (ori.containsKey(c)) {
+                        if (window.get(c).equals(ori.get(c))) {
+                            valid--;
+                        }
+                        window.put(c, window.get(c) - 1);
                     }
                 }
             }
+        }
+
+        if (r - l == s1.length()) {
+            return true;
         }
         return false;
     }
 
     public static void main(String[] args) {
         CheckInclusion checkInclusion = new CheckInclusion();
-        String s1 = "";
-        String s2 = "eldbaooo";
+        String s1 = "ea";
+        String s2 = "eldbeaooo";
         boolean result = checkInclusion.checkInclusion(s1, s2);
         System.out.println(result);
     }
