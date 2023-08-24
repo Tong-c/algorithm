@@ -22,7 +22,7 @@ public class SearchRange_34 {
             }
         }
 
-        if (nums[left] == target) {
+        if (left >= 0 && left < nums.length && nums[left] == target) {
             leftBound = left;
         }
 
@@ -41,7 +41,7 @@ public class SearchRange_34 {
             }
         }
 
-        if (nums[right] == target) {
+        if (right >= 0 && nums[right] == target) {
             rightBound = right;
         }
         return new int[]{leftBound, rightBound};
@@ -49,8 +49,8 @@ public class SearchRange_34 {
 
     public static void main(String[] args) {
         SearchRange_34 searchRange_34 = new SearchRange_34();
-        int[] nums = {5, 7, 7, 8, 8, 10};
-        int target = 8;
+        int[] nums = {2, 2};
+        int target = 3;
         int[] result = searchRange_34.searchRange(nums, target);
         System.out.println(result);
     }
