@@ -1,4 +1,4 @@
-package com.tong.practise.y2023.array;
+package com.tong.practise.y2023.binarysearch;
 
 public class Search_704 {
 
