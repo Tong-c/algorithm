@@ -26,9 +26,9 @@ public class FindClosestElements_658 {
                 break;
             }
             if (arr[mid] < x) {
-                r = mid - 1;
-            } else if (arr[mid] > x) {
                 l = mid + 1;
+            } else if (arr[mid] > x) {
+                r = mid - 1;
             }
         }
         result.add(arr[start]);
@@ -80,7 +80,7 @@ public class FindClosestElements_658 {
         FindClosestElements_658 findClosestElements_658 = new FindClosestElements_658();
         int[] arr = {1, 2, 3, 4, 5};
         int k = 4;
-        int x = 3;
+        int x = -1;
         // 1, 2, 3, 4
         List<Integer> result = findClosestElements_658.findClosestElements(arr, k, x);
         System.out.println(result);
