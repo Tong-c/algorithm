@@ -3,7 +3,7 @@ package com.tong.practise.y2023.binarysearch;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FindClosestElements_658 {
+public class FindClosestElements3_658 {
 
     public List<Integer> findClosestElements(int[] arr, int k, int x) {
         int size = arr.length;
@@ -19,16 +19,17 @@ public class FindClosestElements_658 {
         }
 
         List<Integer> res = new ArrayList<>();
-        for (int i = left; i < left + k; i++) {
-            res.add(arr[i]);
+        for (int i = 0; i < k; i++) {
+            res.add(arr[left + i]);
         }
+
         return res;
     }
 
     public static void main(String[] args) {
-        FindClosestElements_658 findClosestElements_658 = new FindClosestElements_658();
+        FindClosestElements3_658 findClosestElements_658 = new FindClosestElements3_658();
         int[] arr = {1, 1, 1, 2, 10, 10, 10};
-        int k = 1;
+        int k = 2;
         int x = 11;
         // 1, 2, 3, 4
         List<Integer> result = findClosestElements_658.findClosestElements(arr, k, x);
