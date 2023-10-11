@@ -16,20 +16,18 @@ public class NextGreatestLetter_744 {
             }
         }
 
-        if (letters[l] == target) {
+        if (l < letters.length - 1) {
             return letters[l + 1];
-        }
-        if (letters[r] == target) {
-            return letters[0];
+        } else {
+            return letters[l] > target ? letters[l] : letters[0];
         }
 
-        return letters[r] > target ? letters[r] : letters[0];
     }
 
     public static void main(String[] args) {
         NextGreatestLetter_744 tester = new NextGreatestLetter_744();
-        char[] letters = {'a', 'd', 'f'};
-        char target = 'e';
+        char[] letters = {'c', 'f', 'g'};
+        char target = 'd';
         System.out.println(tester.nextGreatestLetter(letters, target));
     }
 }
