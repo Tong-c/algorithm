@@ -17,7 +17,7 @@ public class NextGreatestLetter_744 {
         }
 
         if (l < letters.length - 1) {
-            return letters[l + 1];
+            return letters[l] > target ? letters[l] : letters[l + 1];
         } else {
             return letters[l] > target ? letters[l] : letters[0];
         }
