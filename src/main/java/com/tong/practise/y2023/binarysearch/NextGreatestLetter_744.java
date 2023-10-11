@@ -8,7 +8,7 @@ public class NextGreatestLetter_744 {
         while (l < r) {
             int mid = l + (r - l) / 2;
             if (letters[mid] == target) {
-                return letters[mid + 1];
+                l = mid + 1;
             } else if (letters[mid] > target) {
                 r = mid - 1;
             } else {
@@ -26,8 +26,8 @@ public class NextGreatestLetter_744 {
 
     public static void main(String[] args) {
         NextGreatestLetter_744 tester = new NextGreatestLetter_744();
-        char[] letters = {'c', 'f', 'g'};
-        char target = 'd';
+        char[] letters = {'e', 'e', 'g', 'g'};
+        char target = 'g';
         System.out.println(tester.nextGreatestLetter(letters, target));
     }
 }
