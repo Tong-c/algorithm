@@ -4,7 +4,7 @@ public class IsPerfectSquare_367 {
 
     public boolean isPerfectSquare(int num) {
         int left = 0;
-        int right = num;
+        int right = num / 2 + 1;
         while (left <= right) {
             int middle = left + (right - left) / 2;
             if (middle * middle == num) {
@@ -20,6 +20,6 @@ public class IsPerfectSquare_367 {
 
     public static void main(String[] args) {
         IsPerfectSquare_367 isPerfectSquare = new IsPerfectSquare_367();
-        System.out.println(isPerfectSquare.isPerfectSquare(0));
+        System.out.println(isPerfectSquare.isPerfectSquare(9));
     }
 }
