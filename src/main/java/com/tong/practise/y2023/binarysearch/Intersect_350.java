@@ -5,9 +5,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-public class Intersection_349 {
+public class Intersect_350 {
 
-    public int[] intersection(int[] nums1, int[] nums2) {
+    public int[] intersect(int[] nums1, int[] nums2) {
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int num : nums1) {
             Integer count = map.get(num);
@@ -23,7 +23,7 @@ public class Intersection_349 {
             Integer count = map.get(num);
             if (count != null && count > 0) {
                 list.add(num);
-                map.remove(num);
+                map.put(num, count - 1);
             }
         }
 
@@ -36,10 +36,11 @@ public class Intersection_349 {
     }
 
     public static void main(String[] args) {
-        Intersection_349 tester = new Intersection_349();
-        int[] nums1 = {4, 9, 5};
-        int[] nums2 = {9, 4, 9, 8, 4};
-        int[] intersection = tester.intersection(nums1, nums2);
-        System.out.println(Arrays.toString(intersection));
+        Intersect_350 tester = new Intersect_350();
+        int[] nums1 = {1, 2, 2, 1};
+        int[] nums2 = {2, 2};
+        int[] result = tester.intersect(nums1, nums2);
+        // 2, 2
+        System.out.println(Arrays.toString(result));
     }
 }
