@@ -14,7 +14,7 @@ public class FindDuplicate2_287 {
                 }
             }
 
-            if (count == mid) {
+            if (count <= mid) {
                 low = mid + 1;
             } else {
                 high = mid;
@@ -25,7 +25,7 @@ public class FindDuplicate2_287 {
 
     public static void main(String[] args) {
         FindDuplicate2_287 tester = new FindDuplicate2_287();
-        int[] nums = {1, 3, 4, 3, 2};
+        int[] nums = {2, 2, 2, 2, 2};
         System.out.println(tester.findDuplicate(nums));
     }
 }
