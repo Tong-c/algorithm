@@ -31,7 +31,7 @@ public class FindMedianSortedArrays_4 {
             int mid = newArr.length / 2;
             return (double) (newArr[mid - 1] + newArr[mid]) / 2;
         } else {
-            return (double) newArr[newArr.length / 2] / 2;
+            return newArr[newArr.length / 2];
         }
     }
 
